@@ -638,11 +638,11 @@ public class CustomSwipeRefreshLayout extends ViewGroup implements NestedScrolli
             mReturningToStart = false;
         }
 
-        System.out.println( "enable : " + isEnabled());
-        System.out.println("mReturningToStart : " + mReturningToStart);
-        System.out.println("canChildScrollUp : " + canChildScrollUp());
-        System.out.println("mRefreshing : " + mRefreshing);
-        System.out.println("mNestedScrollInProgress : " + mNestedScrollInProgress);
+//        System.out.println( "enable : " + isEnabled());
+//        System.out.println("mReturningToStart : " + mReturningToStart);
+//        System.out.println("canChildScrollUp : " + canChildScrollUp());
+//        System.out.println("mRefreshing : " + mRefreshing);
+//        System.out.println("mNestedScrollInProgress : " + mNestedScrollInProgress);
 
 //        if (!isEnabled() || mReturningToStart || canChildScrollUp()
 //                || mRefreshing || mNestedScrollInProgress) {
@@ -661,7 +661,7 @@ public class CustomSwipeRefreshLayout extends ViewGroup implements NestedScrolli
                 mIsBeingDragged = false;
                 final float initialDownY = getMotionEventY(ev, mActivePointerId);
                 if (initialDownY == -1) {
-                    System.out.println("intercept 2 return");
+//                    System.out.println("intercept 2 return");
                     return false;
                 }
                 mInitialDownY = initialDownY;
@@ -675,7 +675,7 @@ public class CustomSwipeRefreshLayout extends ViewGroup implements NestedScrolli
 
                 final float y = getMotionEventY(ev, mActivePointerId);
                 if (y == -1) {
-                    System.out.println("intercept 3 return");
+//                    System.out.println("intercept 3 return");
                     return false;
                 }
                 final float yDiff = y - mInitialDownY;
@@ -697,7 +697,7 @@ public class CustomSwipeRefreshLayout extends ViewGroup implements NestedScrolli
                 break;
         }
 
-        System.out.println("mIsBeingDragged : " + mIsBeingDragged);
+//        System.out.println("mIsBeingDragged : " + mIsBeingDragged);
 
         return mIsBeingDragged;
     }
@@ -1000,7 +1000,7 @@ public class CustomSwipeRefreshLayout extends ViewGroup implements NestedScrolli
             return false;
         }
 
-        System.out.println("touch");
+//        System.out.println("touch");
 
         switch (action) {
             case MotionEvent.ACTION_DOWN:
@@ -1022,7 +1022,7 @@ public class CustomSwipeRefreshLayout extends ViewGroup implements NestedScrolli
                 mTarget.setTranslationY(overscrollTop);
                 if (mIsBeingDragged) {
                     if (overscrollTop > 0) {
-                        System.out.println("touch event move");
+//                        System.out.println("touch event move");
                         moveSpinner(overscrollTop);
                     } else {
                         return false;

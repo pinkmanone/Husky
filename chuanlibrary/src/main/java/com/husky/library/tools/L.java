@@ -23,7 +23,7 @@ import javax.xml.transform.stream.StreamSource;
  * log util
  */
 public class L {
-    public static String TAG = "ghost";
+    public static String TAG = "husky";
     public static boolean LOG_DEBUG = true;
     private static final String LINE_SEPARATOR = System.getProperty("line.separator");
     private static final int VERBOSE = 2;
