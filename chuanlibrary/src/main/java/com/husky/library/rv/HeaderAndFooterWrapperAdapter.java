@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 public class HeaderAndFooterWrapperAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int BASE_ITEM_TYPE_HEADER = 100000;
-    private static final int BASE_ITEM_TYPE_FOOTER = 100000;
+    private static final int BASE_ITEM_TYPE_FOOTER = 200000;
 
     private RecyclerView.Adapter innerAdapter;
     private SparseArray<View> headerViews = new SparseArray<>();
