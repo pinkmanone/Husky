@@ -112,6 +112,10 @@ public class BannerView<T> extends RelativeLayout implements ViewPager.OnPageCha
         setData();
     }
 
+    public void setNeedIndecator(boolean b){
+        this.isNeedIndecator = b;
+    }
+
     private void createIndicator() {
         if (!isNeedIndecator){
             return;
