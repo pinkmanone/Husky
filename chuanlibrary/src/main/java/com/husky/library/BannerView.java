@@ -36,6 +36,7 @@ public class BannerView<T> extends RelativeLayout implements ViewPager.OnPageCha
     private int count;
     private boolean isAutoPlay = true;
     private int delayTime = 3000;
+    private boolean isNeedIndecator = true;
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -112,6 +113,9 @@ public class BannerView<T> extends RelativeLayout implements ViewPager.OnPageCha
     }
 
     private void createIndicator() {
+        if (!isNeedIndecator){
+            return;
+        }
         dots.clear();
         layout.removeAllViews();
         for (int i = 0; i < count; i++) {
@@ -151,6 +155,9 @@ public class BannerView<T> extends RelativeLayout implements ViewPager.OnPageCha
     }
 
     private void setDotResource(int position) {
+        if (!isNeedIndecator){
+            return;
+        }
         for (int i = 0; i < dots.size(); i++) {
             if (i == position) {
                 dots.get(i).setBackgroundResource(selectedIndicator);

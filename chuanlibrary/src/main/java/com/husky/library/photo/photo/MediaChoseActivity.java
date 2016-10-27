@@ -348,9 +348,9 @@ public class MediaChoseActivity extends AppCompatActivity {
         }
         if (options == null) {
             options = new UCrop.Options();
+            options.setStatusBarColor(statusBarcolor);
+            options.setToolbarColor(actionBarcolor);
         }
-        options.setStatusBarColor(statusBarcolor);
-        options.setToolbarColor(actionBarcolor);
         uCrop.withOptions(options);
         uCrop.start(this);
 
