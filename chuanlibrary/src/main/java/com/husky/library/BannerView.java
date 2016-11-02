@@ -91,6 +91,7 @@ public class BannerView<T> extends RelativeLayout implements ViewPager.OnPageCha
      * @param listener 回调接口 用来显示banner图片
      */
     public void setData(List<T> ts, OnLoadImageListener<T> listener) {
+        reset();
         this.datas = ts;
         count = ts.size();
         createIndicator();
@@ -112,12 +113,17 @@ public class BannerView<T> extends RelativeLayout implements ViewPager.OnPageCha
         setData();
     }
 
-    public void setNeedIndecator(boolean b){
+    public void reset(){
+        dots.clear();
+        ivs.clear();
+    }
+
+    public void setNeedIndecator(boolean b) {
         this.isNeedIndecator = b;
     }
 
     private void createIndicator() {
-        if (!isNeedIndecator){
+        if (!isNeedIndecator) {
             return;
         }
         dots.clear();
@@ -159,7 +165,7 @@ public class BannerView<T> extends RelativeLayout implements ViewPager.OnPageCha
     }
 
     private void setDotResource(int position) {
-        if (!isNeedIndecator){
+        if (!isNeedIndecator) {
             return;
         }
         for (int i = 0; i < dots.size(); i++) {
