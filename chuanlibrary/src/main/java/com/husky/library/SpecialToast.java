@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 /**
  * 带状态的Toast 成功 失败 普通三种状态
+ *
  * @author husky
  */
 public class SpecialToast {
@@ -24,18 +25,19 @@ public class SpecialToast {
 
     private Toast toast;
 
-    public SpecialToast(Context context){
+    public SpecialToast(Context context) {
         toast = new Toast(context);
-        toast.setGravity(Gravity.CENTER,0,0);
+        toast.setGravity(Gravity.CENTER, 0, 0);
     }
-    public static SpecialToast make(Context context, int type, String content, int duration){
+
+    public static SpecialToast make(Context context, int type, String content, int duration) {
         SpecialToast toast = new SpecialToast(context);
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = view = inflater.inflate(R.layout.special_toast_img,null);
-        ImageView imageView = (ImageView)view.findViewById(R.id.toast_img_iv);
-        TextView textView = (TextView)view.findViewById(R.id.toast_img_tv);
-        switch (type){
+        View view = view = inflater.inflate(R.layout.special_toast_img, null);
+        ImageView imageView = (ImageView) view.findViewById(R.id.toast_img_iv);
+        TextView textView = (TextView) view.findViewById(R.id.toast_img_tv);
+        switch (type) {
             case TYPE_SUCCESS:
                 imageView.setVisibility(View.VISIBLE);
                 imageView.setImageResource(R.drawable.icon_prompt_correct);
@@ -56,15 +58,19 @@ public class SpecialToast {
         return toast;
     }
 
-    public void setDuration(int duration){
+    public void setDuration(int duration) {
         toast.setDuration(duration);
     }
 
-    public void setView(View view){
+    public void setView(View view) {
         toast.setView(view);
     }
 
-    public void show(){
+    public void setText(String content) {
+        toast.setText(content);
+    }
+
+    public void show() {
         toast.show();
     }
 }
