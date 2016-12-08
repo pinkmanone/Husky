@@ -26,7 +26,10 @@ public class SpecialToast {
     private Toast toast;
 
     public SpecialToast(Context context) {
-        toast = new Toast(context);
+//        toast = new Toast(context);
+        if (toast == null) {
+            toast = Toast.makeText(context, "", Toast.LENGTH_SHORT);
+        }
         toast.setGravity(Gravity.CENTER, 0, 0);
     }
 
@@ -34,7 +37,7 @@ public class SpecialToast {
         SpecialToast toast = new SpecialToast(context);
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = view = inflater.inflate(R.layout.special_toast_img, null);
+        View view = inflater.inflate(R.layout.special_toast_img, null);
         ImageView imageView = (ImageView) view.findViewById(R.id.toast_img_iv);
         TextView textView = (TextView) view.findViewById(R.id.toast_img_tv);
         switch (type) {
