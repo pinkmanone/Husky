@@ -26,10 +26,7 @@ public class SpecialToast {
     private Toast toast;
 
     public SpecialToast(Context context) {
-//        toast = new Toast(context);
-        if (toast == null) {
-            toast = Toast.makeText(context, "", Toast.LENGTH_SHORT);
-        }
+        toast = new Toast(context);
         toast.setGravity(Gravity.CENTER, 0, 0);
     }
 
